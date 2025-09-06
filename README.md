@@ -26,7 +26,7 @@ O fluxo do projeto inclui:
 
 Para este projeto, utilizamos um **ESP32** conectado a um sensor de luminosidade **LDR**. A imagem abaixo mostra o diagrama de conexão, que pode ser simulado e testado através do projeto no Wokwi.
 
-![Diagrama de Conexão do ESP32 com o sensor LDR](assets/images/A40E694E-794D-40D3-B2AD-4202BDBC6D2E.png)
+![Diagrama de Conexão do ESP32 com o sensor LDR](assets/images/Esp32.png)
 
 * **VCC:** Conectado ao pino 3V3 do ESP32
 * **GND:** Conectado ao pino GND do ESP32
@@ -41,7 +41,7 @@ Para simular o funcionamento do circuito antes de montar o hardware físico, voc
 
 A imagem abaixo mostra a saída do **Monitor Serial** do ESP32, exibindo o estado do sistema, o valor de luminosidade lido pelo sensor e a comunicação com o broker MQTT.
 
-![Exemplo de Saída do Monitor Serial](assets/images/94FD7854-B58E-4ACC-B379-FB7F404EA993.png)
+![Exemplo de Saída do Monitor Serial](assets/images/terminalesp32.png)
 
 ---
 
