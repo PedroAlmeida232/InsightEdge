@@ -125,98 +125,31 @@ Para replicar este projeto, você precisará configurar um ambiente Ubuntu Linux
 ### Passos para Configuração:
 
 1.  **Instalar Docker e Docker Compose no Ubuntu:**
-    Siga as instruções oficiais do Docker para instalar o Docker Engine e o Docker Compose no seu sistema Ubuntu.
-
-    ```bash
     sudo apt update
-    sudo apt install apt-transport-https ca-certificates curl software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt update
-    sudo apt install docker-ce docker-ce-cli containerd.io
-    sudo usermod -aG docker $USER
-    # Reinicie o terminal ou faça logout/login para que as mudanças tenham efeito
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-    ```
+    sudo apt install docker.io
+    sudo apt install docker-compose
+   
+2. **Clonar repositorio
+   ```bash
+   git clone
+   ```
 
-2.  **Configurar Componentes FIWARE com Docker Compose:**
-    Crie um arquivo `docker-compose.yml` para implantar o Orion Context Broker, o IoT Agent for MQTT e o Mosquitto MQTT Broker. Um exemplo básico pode ser:
-
-    ```yaml
-    version: '3.8'
-    services:
-      orion:
-        image: fiware/orion-ld
-        hostname: orion
-        container_name: fiware-orion
-        ports:
-          - "1026:1026"
-        command: -dbhost mongo -logLevel DEBUG
-        depends_on:
-          - mongo
-        networks:
-          - fiware_network
-
-      iotagent-json:
-        image: fiware/iotagent-json
-        hostname: iotagent-json
-        container_name: fiware-iotagent-json
-        ports:
-          - "4041:4041"
-        environment:
-          - IOTA_JSON_LOG_LEVEL=DEBUG
-          - IOTA_JSON_ORION_URL=http://orion:1026
-          - IOTA_JSON_MQTT_HOST=mosquitto
-          - IOTA_JSON_MQTT_PORT=1883
-          - IOTA_JSON_RESOURCE=/iot/json
-          - IOTA_JSON_API_KEY=4jggokgpepnvsb2uv4s40d59ov
-        depends_on:
-          - mongo
-          - mosquitto
-          - orion
-        networks:
-          - fiware_network
-
-      mosquitto:
-        image: eclipse-mosquitto
-        hostname: mosquitto
-        container_name: fiware-mosquitto
-        ports:
-          - "1883:1883"
-          - "9001:9001"
-        networks:
-          - fiware_network
-
-      mongo:
-        image: mongo:4.4
-        hostname: mongo
-        container_name: fiware-mongo
-        ports:
-          - "27017:27017"
-        command: --nojournal
-        networks:
-          - fiware_network
-
-    networks:
-      fiware_network:
-        driver: bridge
-    ```
-
-    Salve este conteúdo como `docker-compose.yml` e execute:
-
-    ```bash
+   ```bash
+   cd InsightEdge
+   ```
+   
+   ```bash
     docker-compose up -d
     ```
 
-3.  **Configurar o ESP32:**
-    *   Abra o `pasted_content.txt` no Arduino IDE ou PlatformIO.
+4.  **Configurar o ESP32:**
+    *   Cole o codigo do  `InsightWokwi` no Arduino IDE ou PlatformIO.
     *   Altere as variáveis `default_SSID`, `default_PASSWORD`, `default_BROKER_MQTT` (para o IP da sua máquina Ubuntu onde o Mosquitto está rodando) e `default_ID_MQTT` conforme sua configuração de rede e projeto.
     *   Conecte o ESP32 ao seu computador e faça o upload do código.
 
-4.  **Importar Coleção Postman:**
+5.  **Importar Coleção Postman:**
     *   Abra o Postman.
-    *   Importe o arquivo `FIWAREDescomplicado.postman_collection(1).json`.
+    *   Importe o arquivo `InsightColectionPostman.json` que esta neste repositorio.
     *   Crie uma variável de ambiente no Postman chamada `url` e defina seu valor para o IP da sua máquina Ubuntu onde os componentes FIWARE estão rodando (ex: `http://localhost` ou o IP da VM).
 
 
