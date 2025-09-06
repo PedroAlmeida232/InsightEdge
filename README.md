@@ -14,7 +14,7 @@
 
 ## Introdução
 
-Este projeto explora a integração entre o sistema operacional Ubuntu Linux e a plataforma FIWARE, com foco em soluções de Internet das Coisas (IoT). O objetivo é demonstrar como dispositivos podem ser conectados e seus dados gerenciados e contextualizados utilizando as ferramentas e padrões oferecidos pela FIWARE, rodando em um ambiente Linux robusto como o Ubuntu. O `pasted_content.txt` fornece um exemplo de código para um dispositivo ESP32 que monitora a luminosidade e interage com um broker MQTT, enquanto o `FIWAREDescomplicado.postman_collection(1).json` detalha as requisições Postman para interagir com os componentes FIWARE, como o IoT Agent e o Orion Context Broker.
+Este projeto explora a integração entre o sistema operacional Ubuntu Linux e a plataforma FIWARE, com foco em soluções de Internet das Coisas (IoT). O objetivo é demonstrar como dispositivos podem ser conectados e seus dados gerenciados e contextualizados utilizando as ferramentas e padrões oferecidos pela FIWARE, rodando em um ambiente Linux robusto como o Ubuntu. O repositorio  `InsightWokwi` fornece um exemplo de código para um dispositivo ESP32 que monitora a luminosidade e interage com um broker MQTT, enquanto o `InsightColectionPostman.json` detalha as requisições Postman para interagir com os componentes FIWARE, como o IoT Agent e o Orion Context Broker.
 
 
 
@@ -39,7 +39,7 @@ Ubuntu é uma distribuição Linux popular, baseada no Debian, conhecida por sua
 FIWARE é um conjunto de componentes de código aberto que facilitam o desenvolvimento de soluções inteligentes, especialmente no contexto de Cidades Inteligentes e IoT. Ele fornece um ecossistema de tecnologias que permitem a coleta, gerenciamento, análise e contextualização de dados em tempo real [2]. Os principais componentes da FIWARE utilizados neste projeto incluem:
 
 *   **Orion Context Broker:** O coração da FIWARE, responsável por gerenciar informações de contexto em tempo real. Ele permite que as aplicações consultem e atualizem o estado de entidades (dispositivos, sensores, etc.) [3].
-*   **IoT Agents:** Adaptadores que conectam dispositivos IoT ao Orion Context Broker. Eles traduzem os protocolos específicos dos dispositivos (como MQTT, CoAP, LwM2M) para o modelo de dados NGSI do Orion [4]. Neste projeto, o `FIWAREDescomplicado.postman_collection(1).json` demonstra a interação com o IoT Agent MQTT.
+*   **IoT Agents:** Adaptadores que conectam dispositivos IoT ao Orion Context Broker. Eles traduzem os protocolos específicos dos dispositivos (como MQTT, CoAP, LwM2M) para o modelo de dados NGSI do Orion [4]. Neste projeto, o `InsightColectionPostman.json` demonstra a interação com o IoT Agent MQTT.
 
 ### Como o FIWARE se encaixa neste projeto?
 
@@ -48,9 +48,9 @@ O FIWARE é fundamental para este projeto, pois permite a criação de uma camad
 
 
 
-## Análise do Código `pasted_content.txt`
+## Análise do Código do repositorio `InsightWokwi`
 
-O arquivo `pasted_content.txt` contém um programa Arduino (para ESP32) projetado para monitorar a luminosidade do ambiente usando um sensor LDR e interagir com um broker MQTT. Este código é um exemplo prático de como um dispositivo IoT pode coletar dados e publicá-los em uma plataforma para posterior contextualização via FIWARE.
+O repositorio `InsightWokwi` contém um programa Arduino (para ESP32) projetado para monitorar a luminosidade do ambiente usando um sensor LDR e interagir com um broker MQTT. Este código é um exemplo prático de como um dispositivo IoT pode coletar dados e publicá-los em uma plataforma para posterior contextualização via FIWARE.
 
 ### Funcionalidades Principais:
 
@@ -66,7 +66,7 @@ Este código demonstra a camada de borda da solução IoT, onde os dados brutos 
 
 
 
-## Análise da Coleção Postman `FIWAREDescomplicado.postman_collection(1).json`
+## Análise da Coleção Postman `InsightColectionPostman.json`
 
 A coleção Postman fornece uma série de requisições HTTP pré-configuradas para interagir com os componentes FIWARE, especificamente o IoT Agent para MQTT e o Orion Context Broker. Ela é essencial para configurar e testar a comunicação entre os dispositivos IoT e a plataforma FIWARE.
 
@@ -100,7 +100,7 @@ O projeto demonstra uma arquitetura IoT baseada em FIWARE, onde o Ubuntu Linux s
 
 1.  **Dispositivo (ESP32 no Ubuntu):** O código no `pasted_content.txt` é executado em um ESP32, que monitora a luminosidade e o estado de um atuador.
 2.  **Coleta de Dados:** O ESP32 lê o sensor LDR e publica os dados de luminosidade e o estado do atuador em tópicos MQTT.
-3.  **IoT Agent (no Ubuntu):** O IoT Agent MQTT, configurado via Postman (`FIWAREDescomplicado.postman_collection(1).json`), escuta os tópicos MQTT do dispositivo. Ele traduz os dados do formato MQTT para o modelo de dados NGSI.
+3.  **IoT Agent (no Ubuntu):** O IoT Agent MQTT, configurado via Postman (`InsightColectionPostman.json`), escuta os tópicos MQTT do dispositivo. Ele traduz os dados do formato MQTT para o modelo de dados NGSI.
 4.  **Orion Context Broker (no Ubuntu):** O IoT Agent encaminha os dados NGSI para o Orion Context Broker. O Orion armazena e gerencia o contexto dos dispositivos (neste caso, a `lamp001` com seus atributos de luminosidade e estado).
 5.  **Controle de Comandos:** Comandos enviados para o Orion Context Broker (por exemplo, `on` ou `off` para a `lamp001` via Postman) são recebidos pelo IoT Agent, que os traduz e os envia de volta para o dispositivo ESP32 via MQTT.
 6.  **Consumo de Dados:** Outras aplicações podem consultar o Orion Context Broker para obter o estado atual dos dispositivos ou subscrever a mudanças de contexto. O STH-Comet pode ser usado para persistir o histórico de dados.
