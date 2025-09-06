@@ -137,7 +137,7 @@ Para replicar este projeto, você precisará configurar um ambiente Ubuntu Linux
    
 2. **Clonar repositorio
    ```bash
-   git clone
+   git clone https://github.com/PedroAlmeida232/InsightEdge.git
    ```
 
    ```bash
