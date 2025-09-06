@@ -252,47 +252,47 @@ Para replicar este projeto, você precisará configurar um ambiente Ubuntu Linux
 
 1. **Instalar Docker e Docker Compose no Ubuntu:**
 
-bash
+```bash
 
 sudo apt update
 
+```
 
-
-bash
+```bash
 
 sudo apt install docker.io
+```
 
 
-
-bash
+```bash
 
 sudo apt install docker-compose
 
-
+```
 
 
 2. **Clonar repositorio
 
-bash
+```bash
 
 git clone https://github.com/PedroAlmeida232/InsightEdge.git
+```
 
 
 
 
-
-bash
+```bash
 
 cd InsightEdge
+```
 
 
 
-
-bash
+```bash
 
 docker-compose up -d
 
-
+```
 
 
 
