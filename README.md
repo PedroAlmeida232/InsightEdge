@@ -342,6 +342,6 @@ Este projeto demonstra a sinergia entre o Ubuntu Linux como um ambiente operacio
 
 * **Vídeo:** Como criar e configurar máquina virtual Azure: [Video do Diogo | clique aqui ](https://www.linkedin.com/posts/diogopelinsonmoraes_fiware-iot-azure-activity-7362259978176397312-avBS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADjkJAsBeQnHbus5gKtYviOkcfDLuHVvPA)
 
-* **GitHub:** Base para baixar a FIWAREDescomplicado.postman_collection.json: [Fiware Descomplicado| clique aqui](https://github.com/fabiocabrini/fiware) 
+* **GitHub:** Base para baixar a FIWAREDescomplicado.postman_collection.json: [Fiware Descomplicado | clique aqui](https://github.com/fabiocabrini/fiware) 
 
-* **Wokwi** Simulador do projeto no Wokwi: [Wokwi do projeto](https://wokwi.com/projects/441381648455931905)
+* **Wokwi** Simulador do projeto no Wokwi: [Wokwi do projeto | clique aqui](https://wokwi.com/projects/441381648455931905)
