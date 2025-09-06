@@ -340,6 +340,8 @@ Este projeto demonstra a sinergia entre o Ubuntu Linux como um ambiente operacio
 
 
 
-* **Vídeo:** Como criar e configurar máquina virtual Azure: [https://www.linkedin.com/posts/diogopelinsonmoraes_fiware-iot-azure-activity-7362259978176397312-avBS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADjkJAsBeQnHbus5gKtYviOkcfDLuHVvPA](https://www.linkedin.com/posts/diogopelinsonmoraes_fiware-iot-azure-activity-7362259978176397312-avBS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADjkJAsBeQnHbus5gKtYviOkcfDLuHVvPA)
+* **Vídeo:** Como criar e configurar máquina virtual Azure: [Video do Diogo | clique aqui ](https://www.linkedin.com/posts/diogopelinsonmoraes_fiware-iot-azure-activity-7362259978176397312-avBS?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADjkJAsBeQnHbus5gKtYviOkcfDLuHVvPA)
 
-* **GitHub:** Base para baixar a FIWAREDescomplicado.postman_collection.json: [https://github.com/fabiocabrini/fiware](https://github.com/fabiocabrini/fiware) adicione essas fotos e esse link no readme.md quero que seja bem datalahdo https://wokwi.com/projects/441381648455931905
+* **GitHub:** Base para baixar a FIWAREDescomplicado.postman_collection.json: [Fiware Descomplicado| clique aqui](https://github.com/fabiocabrini/fiware) 
+
+* **Wokwi** Simulador do projeto no Wokwi: [Wokwi do projeto](https://wokwi.com/projects/441381648455931905)
