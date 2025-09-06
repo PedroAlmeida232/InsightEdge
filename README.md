@@ -125,9 +125,15 @@ Para replicar este projeto, você precisará configurar um ambiente Ubuntu Linux
 ### Passos para Configuração:
 
 1.  **Instalar Docker e Docker Compose no Ubuntu:**
+    ```bash
     sudo apt update
+    ```
+    ```bash
     sudo apt install docker.io
+    ```
+    ```bash
     sudo apt install docker-compose
+    ```
    
 2. **Clonar repositorio
    ```bash
