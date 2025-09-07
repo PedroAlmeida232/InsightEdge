@@ -817,7 +817,7 @@
 							"raw": "10"
 						},
 						"url": {
-							"raw": "http://{{url}}:1026/v2/entities/urn:ngsi-ld:entity:001/attrs/humidity/value",
+							"raw": "http://{{url}}:1026/v2/entities/urn:ngsi-ld:entity:luminosidadeInsight/attrs/humidity/value",
 							"protocol": "http",
 							"host": [
 								"{{url}}"
